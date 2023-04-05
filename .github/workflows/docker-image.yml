@@ -24,12 +24,12 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
       
-   - name: Build and Push the Docker Image
-     uses: docker/build-push-action@v4
-     with: 
-       context: .
-       push: true
-       tags: flask-app:latest
+    - name: Build and Push the Docker Image
+      uses: docker/build-push-action@v4
+      with: 
+        context: .
+        push: true
+        tags: flask-app:latest
         
 #     - name: Deploying Container from the Docker Hub Image
 #       uses: appleboy/ssh-action@v0.1.8
