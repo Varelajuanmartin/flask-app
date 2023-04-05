@@ -29,18 +29,18 @@ jobs:
         push: true
         tags: flask-app:latest
         
-    - name: Deploying Container from the Docker Hub Image
-      uses: appleboy/ssh-action@v0.1.8
-      with: 
-        host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            docker image pull flask-app:latest
-            docker container run -d --name flask-app -p 80:5000 sreehariskumar/flask-app
+#     - name: Deploying Container from the Docker Hub Image
+#       uses: appleboy/ssh-action@v0.1.8
+#       with: 
+#         host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSH_USER }}
+#           password: ${{ secrets.SSH_KEY }}
+#           port: ${{ secrets.SSH_PORT }}
+#           script: |
+#             docker image pull flask-app:latest
+#             docker container run -d --name flask-app -p 80:5000 sreehariskumar/flask-app
         
         
         
         
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+#       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
