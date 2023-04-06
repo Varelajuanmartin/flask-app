@@ -29,7 +29,7 @@ jobs:
           push: true
           tags: sreehariskumar/flask-app:latest
           
-      - name: deploying
+      - name: Deploying
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.SSH_HOST }}
