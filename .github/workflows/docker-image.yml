@@ -29,15 +29,15 @@ jobs:
           push: true
           tags: sreehariskumar/flask-app:latest
           
-      - name: deploying
-        uses: appleboy/ssh-action@v0.1.8
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            docker image pull sreehariskumar/flask-app:latest
-            docker container stop flask-app
-            docker container rm flask-app
-            docker container run -d --name flask-app -p 80:5000 sreehariskumar/flask-app
+#      - name: deploying
+#        uses: appleboy/ssh-action@v0.1.8
+#        with:
+#          host: ${{ secrets.SSH_HOST }}
+#          username: ${{ secrets.SSH_USER }}
+#          key: ${{ secrets.SSH_KEY }}
+#          port: ${{ secrets.SSH_PORT }}
+#          script: |
+#            docker image pull sreehariskumar/flask-app:latest
+#            docker container stop flask-app
+#            docker container rm flask-app
+#            docker container run -d --name flask-app -p 80:5000 sreehariskumar/flask-app
